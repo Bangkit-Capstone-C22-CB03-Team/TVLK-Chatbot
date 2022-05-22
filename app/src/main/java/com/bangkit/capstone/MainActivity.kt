@@ -30,7 +30,7 @@ class MainActivity : AppCompatActivity() {
 
         mainViewModel.getAllMessages().observe(this){
             adapter.setList(it)
-            binding?.recyclerviewChat?.smoothScrollToPosition(adapter.itemCount-1)
+            binding?.recyclerviewChat?.scrollToPosition(adapter.itemCount-1)
         }
 
         binding?.sendButtonChatLog?.setOnClickListener {
