@@ -1,4 +1,4 @@
-package com.bangkit.capstone
+package com.bangkit.capstone.network
 
 import com.google.gson.annotations.SerializedName
 

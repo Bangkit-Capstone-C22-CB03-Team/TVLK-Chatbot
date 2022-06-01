@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@android:color/white"
-    tools:context=".MainActivity">
+    tools:context=".ui.MainActivity">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerview_chat"
@@ -41,10 +41,11 @@
             android:ems="10"
             android:singleLine="false"
             android:textColor="@color/black"
-            android:hint="Ketikkan pesan"
+            android:hint="@string/edittext_hint"
             android:inputType="textMultiLine"
             android:maxLines="5"
             android:paddingLeft="16dp"
+            android:paddingRight="16dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/send_button_chat_log"
             app:layout_constraintStart_toStartOf="parent"
@@ -63,7 +64,8 @@
             android:backgroundTint="#FFD1FFB8"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"/>
+            app:layout_constraintTop_toTopOf="parent"
+            android:contentDescription="@string/btn_send_desc" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

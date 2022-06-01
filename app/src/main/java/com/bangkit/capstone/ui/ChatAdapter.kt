@@ -1,4 +1,4 @@
-package com.bangkit.capstone
+package com.bangkit.capstone.ui
 
 import android.view.LayoutInflater
 import android.view.View
@@ -6,6 +6,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
+import com.bangkit.capstone.R
 import com.bangkit.capstone.database.Message
 import com.bangkit.capstone.helper.DiffCallback
 import java.util.ArrayList

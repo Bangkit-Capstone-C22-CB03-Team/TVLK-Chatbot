@@ -1,13 +1,12 @@
-package com.bangkit.capstone
+package com.bangkit.capstone.ui
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
-import androidx.activity.viewModels
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bangkit.capstone.database.Message
 import com.bangkit.capstone.databinding.ActivityMainBinding
 import com.bangkit.capstone.helper.DateHelper
+import com.bangkit.capstone.viewmodel.MainViewModel
 import com.bangkit.capstone.viewmodel.ViewModelFactory
 
 class MainActivity : AppCompatActivity() {
@@ -35,9 +34,10 @@ class MainActivity : AppCompatActivity() {
 
         binding?.sendButtonChatLog?.setOnClickListener {
             message = binding?.edittextChatLog?.text.toString()
-            if (message.trim() != ""){
-                userChat(message)
-                mainViewModel.getBotResponse(message)
+            val msg = message.trim()
+            if (msg != ""){
+                userChat(msg)
+                mainViewModel.getBotResponse(msg)
                 binding?.edittextChatLog?.setText("")
             }
         }

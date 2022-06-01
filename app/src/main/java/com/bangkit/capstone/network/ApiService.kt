@@ -1,4 +1,4 @@
-package com.bangkit.capstone
+package com.bangkit.capstone.network
 
 import retrofit2.Call
 import retrofit2.http.GET

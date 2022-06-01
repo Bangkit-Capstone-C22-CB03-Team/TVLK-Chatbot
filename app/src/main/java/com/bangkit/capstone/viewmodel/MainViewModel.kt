@@ -1,13 +1,14 @@
-package com.bangkit.capstone
+package com.bangkit.capstone.viewmodel
 
 import android.app.Application
 import android.util.Log
 import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.bangkit.capstone.database.Message
 import com.bangkit.capstone.database.MessageRepository
 import com.bangkit.capstone.helper.DateHelper
+import com.bangkit.capstone.network.ApiConfig
+import com.bangkit.capstone.network.BotResponse
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
