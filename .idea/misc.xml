@@ -13,7 +13,17 @@
         <entry key="..\:/bangkit/Submission/Capstone/app/src/main/res/layout/activity_main.xml" value="0.23217922606924643" />
         <entry key="..\:/bangkit/Submission/Capstone/app/src/main/res/layout/bot_message.xml" value="0.25" />
         <entry key="..\:/bangkit/Submission/Capstone/app/src/main/res/layout/message_bubble.xml" value="0.25" />
-        <entry key="..\:/bangkit/helpfromother/TVLK-Chatbot/app/src/main/res/layout/activity_main.xml" value="0.33" />
+        <entry key="..\:/bangkit/helpfromother/TVLK-Chatbot/app/src/main/res/drawable/bg_chat_from_bot.xml" value="0.1" />
+        <entry key="..\:/bangkit/helpfromother/TVLK-Chatbot/app/src/main/res/drawable/bg_chat_to_bot.xml" value="0.1" />
+        <entry key="..\:/bangkit/helpfromother/TVLK-Chatbot/app/src/main/res/drawable/edittext_chat.xml" value="0.1" />
+        <entry key="..\:/bangkit/helpfromother/TVLK-Chatbot/app/src/main/res/drawable/ic_baseline_access_time_24.xml" value="0.1" />
+        <entry key="..\:/bangkit/helpfromother/TVLK-Chatbot/app/src/main/res/drawable/ic_launcher_background.xml" value="0.258" />
+        <entry key="..\:/bangkit/helpfromother/TVLK-Chatbot/app/src/main/res/drawable/ic_send.xml" value="0.258" />
+        <entry key="..\:/bangkit/helpfromother/TVLK-Chatbot/app/src/main/res/drawable/rect.xml" value="0.258" />
+        <entry key="..\:/bangkit/helpfromother/TVLK-Chatbot/app/src/main/res/drawable/rounded_rectangle.xml" value="0.258" />
+        <entry key="..\:/bangkit/helpfromother/TVLK-Chatbot/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/bangkit/helpfromother/TVLK-Chatbot/app/src/main/res/layout/bot_message.xml" value="0.1" />
+        <entry key="..\:/bangkit/helpfromother/TVLK-Chatbot/app/src/main/res/layout/message_bubble.xml" value="0.1" />
       </map>
     </option>
   </component>

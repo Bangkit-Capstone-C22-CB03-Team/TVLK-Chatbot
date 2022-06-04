@@ -5,7 +5,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/white"
     tools:context=".ui.MainActivity">
 
     <androidx.recyclerview.widget.RecyclerView
@@ -13,12 +12,25 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginBottom="0dp"
-        android:background="#e4e4e4"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintBottom_toTopOf="@+id/buttons_container"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+    <TextView
+        android:id="@+id/isConnected"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rect"
+        android:gravity="center"
+        android:padding="2dp"
+        android:text="@string/no_connection"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/buttons_container"
@@ -32,25 +44,27 @@
             android:id="@+id/edittext_chat_log"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:paddingVertical="10dp"
-            android:layout_marginBottom="8dp"
-            android:layout_marginEnd="8dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
             android:background="@drawable/edittext_chat"
             android:ems="10"
-            android:singleLine="false"
-            android:textColor="@color/black"
             android:hint="@string/edittext_hint"
+            android:importantForAutofill="no"
             android:inputType="textMultiLine"
             android:maxLines="5"
+            android:minHeight="48dp"
+            android:paddingVertical="10dp"
             android:paddingLeft="16dp"
             android:paddingRight="16dp"
+            android:singleLine="false"
+            android:textColor="@color/black"
+            android:textColorHint="#757575"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/send_button_chat_log"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:importantForAutofill="no" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/send_button_chat_log"
@@ -68,4 +82,5 @@
             android:contentDescription="@string/btn_send_desc" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

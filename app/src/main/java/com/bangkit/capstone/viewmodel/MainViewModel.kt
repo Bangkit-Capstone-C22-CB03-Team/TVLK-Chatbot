@@ -1,8 +1,13 @@
 package com.bangkit.capstone.viewmodel
 
 import android.app.Application
+import android.content.Context
+import android.net.ConnectivityManager
+import android.net.NetworkCapabilities
+import android.os.Build
 import android.util.Log
 import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.bangkit.capstone.database.Message
 import com.bangkit.capstone.database.MessageRepository

@@ -2,4 +2,5 @@
     <string name="app_name">Capstone</string>
     <string name="edittext_hint">Ketikkan pesan</string>
     <string name="btn_send_desc">Send message</string>
+    <string name="no_connection">No connection</string>
 </resources>

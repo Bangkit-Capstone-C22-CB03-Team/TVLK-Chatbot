@@ -19,7 +19,7 @@
         android:paddingTop="8dp"
         android:paddingEnd="16dp"
         android:paddingBottom="8dp"
-        android:text="Jadi gini"
+        tools:text="Jadi gini"
         android:textColor="@android:color/black"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -32,7 +32,7 @@
         android:paddingStart="20dp"
         android:paddingEnd="20dp"
         android:textColor="#737272"
-        android:text="16 may, 2:05 PM"
+        tools:text="16 may, 2:05 PM"
         android:textSize="11sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="@+id/tv_msg"
