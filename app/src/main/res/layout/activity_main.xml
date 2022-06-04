@@ -11,12 +11,13 @@
         android:id="@+id/recyclerview_chat"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginBottom="0dp"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintBottom_toTopOf="@+id/buttons_container"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
 
     </androidx.recyclerview.widget.RecyclerView>
 
@@ -31,6 +32,20 @@
         android:textColor="@color/white"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <pl.droidsonroids.gif.GifImageView
+        android:id="@+id/loading"
+        android:layout_width="101dp"
+        android:layout_height="49dp"
+        android:layout_marginStart="-10dp"
+        android:layout_marginBottom="-8dp"
+        android:scaleType="centerCrop"
+        android:visibility="invisible"
+        android:scaleX="1.2"
+        android:scaleY="1.2"
+        android:src="@drawable/loader"
+        app:layout_constraintBottom_toTopOf="@+id/buttons_container"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/buttons_container"

@@ -1,7 +1,9 @@
 package com.bangkit.capstone.ui
-import androidx.appcompat.app.AppCompatActivity
+import android.animation.ObjectAnimator
 import android.os.Bundle
+import android.view.View
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bangkit.capstone.database.Message
@@ -10,7 +12,6 @@ import com.bangkit.capstone.helper.DateHelper
 import com.bangkit.capstone.viewmodel.CheckInternetAccess
 import com.bangkit.capstone.viewmodel.MainViewModel
 import com.bangkit.capstone.viewmodel.ViewModelFactory
-import kotlin.properties.Delegates
 
 class MainActivity : AppCompatActivity() {
     private lateinit var mainViewModel : MainViewModel
@@ -23,17 +24,21 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         _binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding?.root)
         networkCheck()
-        adapter = ChatAdapter()
-        binding?.recyclerviewChat?.layoutManager = LinearLayoutManager(this)
-        binding?.recyclerviewChat?.adapter = adapter
-        mainViewModel = obtainViewModel(this)
+        setAdapter()
+
+        binding?.loading?.animateVisibility(false)
+        binding?.loading?.visibility = View.VISIBLE
         binding?.sendButtonChatLog?.setOnClickListener {
             message = binding?.edittextChatLog?.text.toString()
+            mainViewModel.isLoading.observe(this){
+                binding?.loading?.animateVisibility(it)
+            }
             val msg = message.trim()
-            if(binding?.isConnected?.visibility == android.view.View.GONE){
+            if(binding?.isConnected?.visibility == View.GONE){
                 if (msg != ""){
                     userChat(msg)
                     mainViewModel.getBotResponse(msg)
@@ -59,16 +64,29 @@ class MainActivity : AppCompatActivity() {
         val factory = ViewModelFactory.getInstance(activity.application)
         return ViewModelProvider(activity, factory)[MainViewModel::class.java]
     }
+    private fun setAdapter(){
+        adapter = ChatAdapter()
+        binding?.recyclerviewChat?.layoutManager = LinearLayoutManager(this)
+        binding?.recyclerviewChat?.adapter = adapter
+        mainViewModel = obtainViewModel(this)
+    }
 
     fun networkCheck(){
         checkInternetAccess = CheckInternetAccess(application)
         checkInternetAccess.observe(this){isConnected->
             if(isConnected){
-                binding?.isConnected?.visibility = android.view.View.GONE
+                binding?.isConnected?.visibility = View.GONE
             }else{
-                binding?.isConnected?.visibility = android.view.View.VISIBLE
+                binding?.isConnected?.visibility = View.VISIBLE
             }
         }
+    }
+
+    fun View.animateVisibility(isVisible: Boolean, duration: Long = 1000) {
+        ObjectAnimator
+            .ofFloat(this, View.ALPHA, if (isVisible) 1f else 0f)
+            .setDuration(duration)
+            .start()
     }
 
 
