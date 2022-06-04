@@ -31,8 +31,8 @@ class MainActivity : AppCompatActivity() {
         setAdapter()
 
         binding?.loading?.animateVisibility(false)
-        binding?.loading?.visibility = View.VISIBLE
         binding?.sendButtonChatLog?.setOnClickListener {
+            binding?.loading?.visibility = View.VISIBLE
             message = binding?.edittextChatLog?.text.toString()
             mainViewModel.isLoading.observe(this){
                 binding?.loading?.animateVisibility(it)
