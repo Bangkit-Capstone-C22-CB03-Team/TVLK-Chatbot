@@ -33,6 +33,9 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+    viewBinding {
+        enabled = true
+    }
 }
 
 dependencies {
@@ -58,4 +61,8 @@ dependencies {
 
     //library for gif
     implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.23'
+
+    //splash stuff library
+    implementation 'androidx.datastore:datastore-preferences:1.0.0-alpha08' //dataStore
+    implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.4.1'//lifecycleScope
 }

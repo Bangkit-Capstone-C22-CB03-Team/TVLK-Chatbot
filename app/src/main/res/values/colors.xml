@@ -25,4 +25,10 @@
     <color name="blue_500">#0F80D2</color>
     <color name="blue_600">#0C69AC</color>
     <color name="blue_700">#095286</color>
+
+    <color name="font_color">#FFFFFFFF</color>
+    <color name="title_color">#FFFFFFFF</color>
+    <color name="content_color">#ffffffff</color>
+    <color name="prop_color">#ffffffff</color>
+    <color name="backgroundContext_color">#0096c8</color>
 </resources>
