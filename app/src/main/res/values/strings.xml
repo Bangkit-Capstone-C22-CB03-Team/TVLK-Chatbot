@@ -3,4 +3,18 @@
     <string name="edittext_hint">Ketikkan pesan</string>
     <string name="btn_send_desc">Send message</string>
     <string name="no_connection">No connection</string>
+
+    <string name="description1">Our Bot chat are designed \nto answer your question about this service</string>
+    <string name="description2">No Need to wait for our customer service reply</string>
+    <string name="description3">What are You waiting for?</string>
+    <string name="title1">Need Help?</string>
+    <string name="title2">With Instant</string>
+    <string name="title3">Let\'s Start</string>
+    <string name="img_onboard1_desc">Onboarding Image One</string>
+    <string name="img_onboard2_desc">Onboarding Image Two</string>
+    <string name="img_onboard3_desc">Onboarding Image Three</string>
+    <string name="btn_onboard_next_desc">Next Button</string>
+    <string name="btn_onboard_prev_desc">Previous Button</string>
+    <string name="btn_onboard_done_desc">Done Onboard</string>
+    <string name="img_splashlogo">Splash Logo</string>
 </resources>

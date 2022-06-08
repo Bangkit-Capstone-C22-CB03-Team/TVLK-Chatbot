@@ -1,14 +1,19 @@
 package com.bangkit.capstone.ui
 import android.animation.ObjectAnimator
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.asLiveData
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bangkit.capstone.database.Message
 import com.bangkit.capstone.databinding.ActivityMainBinding
 import com.bangkit.capstone.helper.DateHelper
+import com.bangkit.capstone.splash.Checker
+import com.bangkit.capstone.splash.OnboardingActivity
+import com.bangkit.capstone.splash.PassChecker
 import com.bangkit.capstone.viewmodel.CheckInternetAccess
 import com.bangkit.capstone.viewmodel.MainViewModel
 import com.bangkit.capstone.viewmodel.ViewModelFactory
@@ -18,6 +23,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var message: String
     private lateinit var adapter: ChatAdapter
     private lateinit var checkInternetAccess: CheckInternetAccess
+    private lateinit var checker: Checker
     private var _binding: ActivityMainBinding? = null
     private val binding get() = _binding
 
@@ -27,6 +33,8 @@ class MainActivity : AppCompatActivity() {
 
         _binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding?.root)
+        checker = Checker(applicationContext)
+        observeOnboard()
         networkCheck()
         setAdapter()
 
@@ -87,6 +95,22 @@ class MainActivity : AppCompatActivity() {
             .ofFloat(this, View.ALPHA, if (isVisible) 1f else 0f)
             .setDuration(duration)
             .start()
+    }
+
+    //Splash Stuff
+    private fun observeOnboard() {
+        checker.isDoneFlow.asLiveData().observe(this) {
+                passChecker ->
+            passChecker?.let {
+                when(passChecker) {
+                    PassChecker.UNDONE -> moveOnboarding()
+                }
+            }
+        }
+    }
+    private fun moveOnboarding() {
+        val intent = Intent(this, OnboardingActivity::class.java)
+        startActivity(intent)
     }
 
 
