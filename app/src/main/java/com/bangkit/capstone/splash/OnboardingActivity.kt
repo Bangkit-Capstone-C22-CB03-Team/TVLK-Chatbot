@@ -41,6 +41,7 @@ class OnboardingActivity : AppCompatActivity() {
         val intent = Intent(this, MainActivity::class.java)
         Timer("SettingUp", false).schedule(500) {
             startActivity(intent)
+            finish()
         }
     }
 }
