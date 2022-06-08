@@ -111,6 +111,7 @@ class MainActivity : AppCompatActivity() {
     private fun moveOnboarding() {
         val intent = Intent(this, OnboardingActivity::class.java)
         startActivity(intent)
+        finish()
     }
 
 
