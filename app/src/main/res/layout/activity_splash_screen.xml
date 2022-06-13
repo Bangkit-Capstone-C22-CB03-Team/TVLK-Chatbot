@@ -6,14 +6,27 @@
     android:layout_height="match_parent"
     tools:context=".splash.SplashScreenActivity">
 
-    <ImageView
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="160dp"
         android:layout_height="160dp"
-        android:src="@drawable/traveloka_logo"
-        android:contentDescription="@string/img_splashlogo"
+        android:elevation="2dp"
+        android:background="@drawable/rounded_30dp_filled"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ImageView
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:src="@drawable/traveloka_logo"
+            android:contentDescription="@string/img_splashlogo"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

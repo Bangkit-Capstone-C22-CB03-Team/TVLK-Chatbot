@@ -21,4 +21,12 @@
     <string name="connection_dialog_title">Connection Lost</string>
     <string name="connection_dialog_content">Your device is not connected to the internet. Make sure to check your internet connection before continuing the application</string>
     <string name="connection_dialog_confirm">Close</string>
+    <string name="category1">Sapa si Loka</string>
+    <string name="category2">Informasi Umum Pembayaran</string>
+    <string name="category3">Informasi Promo</string>
+    <string name="category4">Kupon Traveloka</string>
+    <string name="category5">Pembayaran dengan IDR</string>
+    <string name="category6">Traveloka QR Scanner</string>
+    <string name="icon_category_desc">Icon Category</string>
+    <string name="title_Category">Perihal Apa yang Ingin \nDitanyakan?</string>
 </resources>
