@@ -13,4 +13,6 @@ interface MessageDao {
     @Query("SELECT * From Message ORDER BY date ASC ")
     fun getAllMessages() : LiveData<List<Message>>
 
+    @Query("DELETE FROM Message")
+    fun deleteAllMessages()
 }

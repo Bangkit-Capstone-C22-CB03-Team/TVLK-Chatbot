@@ -17,4 +17,8 @@
     <string name="btn_onboard_prev_desc">Previous Button</string>
     <string name="btn_onboard_done_desc">Done Onboard</string>
     <string name="img_splashlogo">Splash Logo</string>
+
+    <string name="connection_dialog_title">Connection Lost</string>
+    <string name="connection_dialog_content">Your device is not connected to the internet. Make sure to check your internet connection before continuing the application</string>
+    <string name="connection_dialog_confirm">Close</string>
 </resources>

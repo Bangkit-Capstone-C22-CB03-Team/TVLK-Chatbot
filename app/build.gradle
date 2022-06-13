@@ -65,4 +65,6 @@ dependencies {
     //splash stuff library
     implementation 'androidx.datastore:datastore-preferences:1.0.0-alpha08' //dataStore
     implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.4.1'//lifecycleScope
+
+    implementation 'com.github.f0ris.sweetalert:library:1.6.2' //sweetAlert
 }

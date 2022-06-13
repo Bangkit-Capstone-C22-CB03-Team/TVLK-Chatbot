@@ -10,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.asLiveData
 import androidx.recyclerview.widget.LinearLayoutManager
+import cn.pedant.SweetAlert.SweetAlertDialog
 import com.bangkit.capstone.R
 import com.bangkit.capstone.database.Message
 import com.bangkit.capstone.databinding.ActivityMainBinding
@@ -40,7 +41,7 @@ class MainActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when(item.itemId) {
             R.id.clear -> {
-                Toast.makeText(this, "Item Selected", Toast.LENGTH_SHORT).show()
+                mainViewModel.deleteAll()
                 return true
             }
             else -> return true
@@ -57,8 +58,7 @@ class MainActivity : AppCompatActivity() {
         supportActionBar?.show()
         supportActionBar?.setDisplayShowCustomEnabled(true)
         supportActionBar?.setCustomView(R.layout.custom_toolbar)
-        //Clickable Action Bar
-        setOnClickToolbar()
+
 
         checker = Checker(applicationContext)
         observeOnboard()
@@ -80,7 +80,11 @@ class MainActivity : AppCompatActivity() {
                     binding?.edittextChatLog?.setText("")
                 }
             }else{
-                Toast.makeText(this, "gagal", Toast.LENGTH_SHORT).show()
+                SweetAlertDialog(this, SweetAlertDialog.ERROR_TYPE)
+                    .setTitleText(getString(R.string.connection_dialog_title))
+                    .setContentText(getString(R.string.connection_dialog_content))
+                    .setConfirmText(getString(R.string.connection_dialog_confirm))
+                    .show()
             }
         }
 

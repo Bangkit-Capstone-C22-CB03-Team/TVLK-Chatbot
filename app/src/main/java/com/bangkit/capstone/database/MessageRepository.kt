@@ -21,4 +21,8 @@ class MessageRepository(application: Application) {
         executorService.execute { mMessageDao.insert(message) }
     }
 
+    fun deleteAll(){
+        executorService.execute { mMessageDao.deleteAllMessages() }
+    }
+
 }

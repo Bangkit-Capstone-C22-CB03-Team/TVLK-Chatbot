@@ -47,5 +47,9 @@ class MainViewModel(application: Application) : ViewModel() {
         mMessageRepository.insert(message)
     }
 
+    fun deleteAll(){
+        mMessageRepository.deleteAll()
+    }
+
     fun getAllMessages(): LiveData<List<Message>> = mMessageRepository.getAllMessages()
 }
