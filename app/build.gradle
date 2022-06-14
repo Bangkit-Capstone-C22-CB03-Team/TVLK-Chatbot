@@ -8,6 +8,7 @@ android {
     compileSdk 31
 
     defaultConfig {
+        buildConfigField("String", "BASE_URL", '"http://35.241.5.168/"')
         applicationId "com.bangkit.capstone"
         minSdk 21
         targetSdk 31

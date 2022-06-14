@@ -4,6 +4,6 @@ import com.google.gson.annotations.SerializedName
 
 data class BotResponse(
 
-	@field:SerializedName("cnt")
+	@field:SerializedName("answer")
 	val botResponse: String
 )

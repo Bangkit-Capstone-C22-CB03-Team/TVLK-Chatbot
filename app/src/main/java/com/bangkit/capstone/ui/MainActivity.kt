@@ -51,6 +51,8 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+        val category = intent.getIntExtra(CATEGORY, 0)
+
         _binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding?.root)
 
@@ -74,10 +76,16 @@ class MainActivity : AppCompatActivity() {
             }
             val msg = message.trim()
             if(binding?.isConnected?.visibility == View.GONE){
-                if (msg != ""){
-                    userChat(msg)
-                    mainViewModel.getBotResponse(msg)
-                    binding?.edittextChatLog?.setText("")
+                if (msg =="exit"||msg=="quit"||msg=="keluar"){
+                    moveToCategory()
+                }else {
+                    if (msg!=""){
+                        userChat(msg)
+                        mainViewModel.getBotResponse(msg, category)
+                        binding?.edittextChatLog?.setText("")
+                    }else{
+                        Toast.makeText(this, "tidak boleh kosong", Toast.LENGTH_SHORT).show()
+                    }
                 }
             }else{
                 SweetAlertDialog(this, SweetAlertDialog.ERROR_TYPE)
@@ -128,13 +136,6 @@ class MainActivity : AppCompatActivity() {
             .start()
     }
 
-    //toolbar Click Feedback
-    private fun setOnClickToolbar() {
-        val toolbar = findViewById<View>(R.id.toolbarCustom)
-        toolbar.setOnClickListener {
-            Toast.makeText(this, "Toolbar Clicked", Toast.LENGTH_SHORT).show()
-        }
-    }
 
     //Splash Stuff
     private fun observeOnboard() {
@@ -151,6 +152,16 @@ class MainActivity : AppCompatActivity() {
         val intent = Intent(this, OnboardingActivity::class.java)
         startActivity(intent)
         finish()
+    }
+
+    private fun moveToCategory() {
+        val intent = Intent(this, CategoryActivity::class.java)
+        startActivity(intent)
+        finish()
+    }
+
+    companion object {
+        const val CATEGORY = "category"
     }
 
 

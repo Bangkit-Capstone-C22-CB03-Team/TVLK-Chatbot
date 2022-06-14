@@ -22,9 +22,9 @@ class MainViewModel(application: Application) : ViewModel() {
     val isLoading: LiveData<Boolean> = _isLoading
 
 
-    fun getBotResponse(message:String){
+    fun getBotResponse(message:String, categid:Int){
         _isLoading.value = true
-        val client = ApiConfig.getApiService().getResponse(message = message)
+        val client = ApiConfig.getApiService().getResponse(message,  categid)
         client.enqueue(object : Callback<BotResponse>{
             override fun onResponse(call: Call<BotResponse>, response: Response<BotResponse>) {
                 if (response.isSuccessful){
