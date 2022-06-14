@@ -5,6 +5,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.bangkit.capstone.R
+import com.bangkit.capstone.ui.CategoryActivity
 import com.bangkit.capstone.ui.MainActivity
 import java.util.*
 import kotlin.concurrent.schedule
@@ -15,7 +16,7 @@ class SplashScreenActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash_screen)
         supportActionBar?.hide()
-        val intent = Intent(this, MainActivity::class.java)
+        val intent = Intent(this, CategoryActivity::class.java)
         Timer("SettingUp", false).schedule(2000) {
             startActivity(intent)
             finish()
