@@ -76,7 +76,7 @@ class MainActivity : AppCompatActivity() {
             if(binding?.isConnected?.visibility == View.GONE){
                 if (msg!=""){
                     userChat(msg)
-                    mainViewModel.getBotResponse(msg, category,isAccessbility)
+                    mainViewModel.getBotResponse(msg, category)
                     binding?.edittextChatLog?.setText("")
                 }else{
                     if (isAccessbility){
@@ -186,7 +186,7 @@ class MainActivity : AppCompatActivity() {
 
             if(spokenText!=null){
                 userChat(spokenText)
-                mainViewModel.getBotResponse(spokenText, category,isAccessbility)
+                mainViewModel.getBotResponse(spokenText, category)
             }
         }
     }

@@ -36,7 +36,7 @@ class MainViewModel(application: Application) : ViewModel() {
     val textMessage: LiveData<String> = _textMessage
 
 
-    fun getBotResponse(message:String, categid:Int, isAccessbility: Boolean){
+    fun getBotResponse(message:String, categid:Int){
         _isLoading.value = true
         val client = ApiConfig.getApiService().getResponse(message,  categid)
         client.enqueue(object : Callback<BotResponse>{

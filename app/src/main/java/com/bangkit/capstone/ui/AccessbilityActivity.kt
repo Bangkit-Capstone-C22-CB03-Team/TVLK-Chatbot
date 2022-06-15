@@ -1,10 +1,9 @@
 package com.bangkit.capstone.ui
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.asLiveData
-import com.bangkit.capstone.R
 import com.bangkit.capstone.databinding.ActivityAccessbilityBinding
 import com.bangkit.capstone.splash.Checker
 import com.bangkit.capstone.splash.OnboardingActivity

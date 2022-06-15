@@ -1,12 +1,11 @@
 package com.bangkit.capstone.splash
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
-import com.bangkit.capstone.R
 import com.bangkit.capstone.databinding.ActivityOnboardingBinding
-import com.bangkit.capstone.ui.MainActivity
+import com.bangkit.capstone.ui.AccessbilityActivity
 import kotlinx.coroutines.launch
 import java.util.*
 import kotlin.concurrent.schedule
@@ -38,7 +37,7 @@ class OnboardingActivity : AppCompatActivity() {
         }
     }
     private fun moveActivity() {
-        val intent = Intent(this, MainActivity::class.java)
+        val intent = Intent(this, AccessbilityActivity::class.java)
         Timer("SettingUp", false).schedule(500) {
             startActivity(intent)
             finish()

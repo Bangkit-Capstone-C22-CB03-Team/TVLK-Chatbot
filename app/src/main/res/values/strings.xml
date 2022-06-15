@@ -29,5 +29,8 @@
     <string name="category6">Traveloka QR Scanner</string>
     <string name="icon_category_desc">Icon Category</string>
     <string name="title_Category">Perihal Apa yang Ingin \nDitanyakan?</string>
-    <string name="bot_name">si Loka</string>
+    <string name="ask_a_question">ask a question</string>
+    <string name="back_to_category">Back to category</string>
+    <string name="contentdesc_button_ask">tanyakan sebuah pertanyaan tombol</string>
+    <string name="bot_name">SLoka</string>
 </resources>

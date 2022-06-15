@@ -2,12 +2,10 @@ package com.bangkit.capstone.splash
 
 import android.annotation.SuppressLint
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import com.bangkit.capstone.R
 import com.bangkit.capstone.ui.AccessbilityActivity
-import com.bangkit.capstone.ui.CategoryActivity
-import com.bangkit.capstone.ui.MainActivity
 import java.util.*
 import kotlin.concurrent.schedule
 

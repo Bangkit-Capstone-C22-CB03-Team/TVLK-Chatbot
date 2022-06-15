@@ -3,11 +3,7 @@ package com.bangkit.capstone.ui
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.lifecycle.asLiveData
 import com.bangkit.capstone.databinding.ActivityCategoryBinding
-import com.bangkit.capstone.splash.Checker
-import com.bangkit.capstone.splash.OnboardingActivity
-import com.bangkit.capstone.splash.PassChecker
 import kotlin.properties.Delegates
 
 class CategoryActivity : AppCompatActivity() {

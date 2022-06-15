@@ -69,13 +69,15 @@
                 android:id="@+id/ask_button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="ask a question" />
+                android:text="@string/ask_a_question"
+                android:contentDescription="@string/contentdesc_button_ask"/>
 
             <Button
                 android:id="@+id/back_button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Back to category"/>
+                android:text="@string/back_to_category"
+                android:contentDescription="@string/back_to_category"/>
         </LinearLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
