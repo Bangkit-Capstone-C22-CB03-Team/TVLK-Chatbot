@@ -10,13 +10,13 @@
         android:layout_height="?attr/actionBarSize"
         android:padding="4dp">
 
-        <ImageView
+        <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/imgProfile"
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:layout_centerVertical="true"
             android:layout_marginStart="16dp"
-            android:src="@drawable/ic_baseline_account_circle_24" />
+            android:src="@drawable/asset_chatbot2" />
 
         <TextView
             android:id="@+id/tvName"
@@ -26,7 +26,7 @@
             android:layout_marginStart="16dp"
             android:layout_toEndOf="@id/imgProfile"
             android:textColor="@color/white"
-            android:text="User Name"
+            android:text="@string/bot_name"
             android:textSize="20sp" />
     </RelativeLayout>
 
