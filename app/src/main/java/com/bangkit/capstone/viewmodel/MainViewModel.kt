@@ -74,21 +74,23 @@ class MainViewModel(application: Application) : ViewModel() {
 
 
     fun initialForSpeech(
-        engine: TextToSpeech, launcher: ActivityResultLauncher<Intent>
+        textTOSpeechEngine: TextToSpeech, speechToTextLauncher: ActivityResultLauncher<Intent>
     ) = viewModelScope.launch {
-        textToSpeechEngine = engine
-        startForResult = launcher
+        textToSpeechEngine = textTOSpeechEngine
+        startForResult = speechToTextLauncher
     }
 
     fun displaySpeechRecognizer() {
-        startForResult.launch(Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH).apply {
+        startForResult.launch(
+            with(Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH)) {
             putExtra(
                 RecognizerIntent.EXTRA_LANGUAGE_MODEL,
                 RecognizerIntent.LANGUAGE_MODEL_FREE_FORM
             )
             putExtra(RecognizerIntent.EXTRA_LANGUAGE, Locale("in_ID"))
             putExtra(RecognizerIntent.EXTRA_PROMPT, Locale("Bicara sekarang"))
-        })
+            }
+        )
     }
 
     fun speak(text: String) = viewModelScope.launch{

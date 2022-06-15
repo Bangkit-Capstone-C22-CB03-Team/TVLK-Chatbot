@@ -79,12 +79,7 @@ class MainActivity : AppCompatActivity() {
                     mainViewModel.getBotResponse(msg, category)
                     binding?.edittextChatLog?.setText("")
                 }else{
-                    if (isAccessbility){
-                        mainViewModel.speak("Tidak boleh kosong")
-                    }else{
-                        Toast.makeText(this, "tidak boleh kosong", Toast.LENGTH_SHORT).show()
-                    }
-
+                    Toast.makeText(this, "tidak boleh kosong", Toast.LENGTH_SHORT).show()
                 }
             }else{
                 SweetAlertDialog(this, SweetAlertDialog.ERROR_TYPE)
@@ -149,7 +144,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun setViewModel(){
         mainViewModel = obtainViewModel(this)
-        mainViewModel.initialForSpeech(textToSpeechEngine,startForResult)
+        mainViewModel.initialForSpeech(textToSpeechEngine,speechToText)
     }
 
     private fun networkCheck(){
@@ -179,21 +174,25 @@ class MainActivity : AppCompatActivity() {
 
 
     //Accessibility
-    private val startForResult = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
-        if (result.resultCode == RESULT_OK) {
-            val spokenText = result.data?.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS)
-                .let { text-> text?.get(0) }
-
-            if(spokenText!=null){
-                userChat(spokenText)
-                mainViewModel.getBotResponse(spokenText, category)
+    private val speechToText = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
+        if (it.resultCode == RESULT_OK ) {
+            val textFromSpeech = it.data?.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS).let { it?.get(0) }
+            if(textFromSpeech!=null){
+                binding?.loading?.visibility = View.VISIBLE
+                mainViewModel.isLoading.observe(this){
+                    binding?.loading?.animateVisibility(it)
+                }
+                userChat(textFromSpeech)
+                mainViewModel.getBotResponse(textFromSpeech, category)
             }
         }
     }
 
     private val textToSpeechEngine: TextToSpeech by lazy {
         TextToSpeech(this) {
-            if (it == TextToSpeech.SUCCESS) textToSpeechEngine.language = Locale("in_ID")
+            if (it == TextToSpeech.SUCCESS) {
+                textToSpeechEngine.language = Locale("in_ID")
+            }
         }
     }
 
@@ -205,6 +204,16 @@ class MainActivity : AppCompatActivity() {
     companion object {
         const val CATEGORY = "category"
         const val ACCESSBILITY = "ACCESSBILITY"
+    }
+
+    override fun onPause() {
+        textToSpeechEngine.stop()
+        super.onPause()
+    }
+
+    override fun onDestroy() {
+        textToSpeechEngine.shutdown()
+        super.onDestroy()
     }
 
 
