@@ -12,7 +12,7 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        app:layout_constraintBottom_toTopOf="@+id/buttons_container"
+        app:layout_constraintBottom_toTopOf="@+id/frame_layout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -44,58 +44,91 @@
         android:scaleX="1.2"
         android:scaleY="1.2"
         android:src="@drawable/loader"
-        app:layout_constraintBottom_toTopOf="@+id/buttons_container"
+        app:layout_constraintBottom_toTopOf="@+id/frame_layout"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/buttons_container"
+    <FrameLayout
+        android:id="@+id/frame_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#e4e4e4"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintEnd_toEndOf="parent">
 
-        <EditText
-            android:id="@+id/edittext_chat_log"
-            android:layout_width="0dp"
+        <LinearLayout
+            android:id="@+id/blind_container"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginBottom="8dp"
-            android:background="@drawable/edittext_chat"
-            android:ems="10"
-            android:hint="@string/edittext_hint"
-            android:importantForAutofill="no"
-            android:inputType="textMultiLine"
-            android:maxLines="5"
-            android:minHeight="48dp"
+            android:background="#e4e4e4"
+            android:orientation="vertical"
+            android:paddingHorizontal="20dp"
             android:paddingVertical="10dp"
-            android:paddingLeft="16dp"
-            android:paddingRight="16dp"
-            android:singleLine="false"
-            android:textColor="@color/black"
-            android:textColorHint="#757575"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/send_button_chat_log"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintStart_toStartOf="parent">
 
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/send_button_chat_log"
-            android:layout_width="wrap_content"
+            <Button
+                android:id="@+id/ask_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="ask a question" />
+
+            <Button
+                android:id="@+id/back_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Back to category"/>
+        </LinearLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/buttons_container"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginTop="8dp"
-            android:src="@drawable/ic_send"
-            app:fabCustomSize="45dp"
-            android:backgroundTint="#FFD1FFB8"
+            android:background="#e4e4e4"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:contentDescription="@string/btn_send_desc" />
+            app:layout_constraintStart_toStartOf="parent">
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            <EditText
+                android:id="@+id/edittext_chat_log"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="8dp"
+                android:background="@drawable/edittext_chat"
+                android:ems="10"
+                android:hint="@string/edittext_hint"
+                android:importantForAutofill="no"
+                android:inputType="textMultiLine"
+                android:maxLines="5"
+                android:minHeight="48dp"
+                android:paddingVertical="10dp"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:singleLine="false"
+                android:textColor="@color/black"
+                android:textColorHint="#757575"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/send_button_chat_log"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/send_button_chat_log"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginTop="8dp"
+                android:src="@drawable/ic_send"
+                app:fabCustomSize="45dp"
+                android:backgroundTint="#FFD1FFB8"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:contentDescription="@string/btn_send_desc" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </FrameLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

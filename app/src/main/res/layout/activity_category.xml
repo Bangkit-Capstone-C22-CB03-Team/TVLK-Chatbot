@@ -35,6 +35,7 @@
         android:layout_margin="16dp"
         android:layout_marginTop="12dp"
         app:cardCornerRadius="8dp"
+        android:contentDescription="@string/category1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/guideline2">

@@ -7,17 +7,14 @@ import android.view.MenuItem
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.isVisible
 import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.asLiveData
 import androidx.recyclerview.widget.LinearLayoutManager
 import cn.pedant.SweetAlert.SweetAlertDialog
 import com.bangkit.capstone.R
 import com.bangkit.capstone.database.Message
 import com.bangkit.capstone.databinding.ActivityMainBinding
 import com.bangkit.capstone.helper.DateHelper
-import com.bangkit.capstone.splash.Checker
-import com.bangkit.capstone.splash.OnboardingActivity
-import com.bangkit.capstone.splash.PassChecker
 import com.bangkit.capstone.viewmodel.CheckInternetAccess
 import com.bangkit.capstone.viewmodel.MainViewModel
 import com.bangkit.capstone.viewmodel.ViewModelFactory
@@ -27,7 +24,6 @@ class MainActivity : AppCompatActivity() {
     private lateinit var message: String
     private lateinit var adapter: ChatAdapter
     private lateinit var checkInternetAccess: CheckInternetAccess
-    private lateinit var checker: Checker
     private var _binding: ActivityMainBinding? = null
     private val binding get() = _binding
 
@@ -51,10 +47,15 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+
         val category = intent.getIntExtra(CATEGORY, 0)
 
         _binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding?.root)
+
+
+        //ini nanti buat accessbility yakin gas?
+        binding?.buttonsContainer?.isVisible = false
 
         //Set Custom Action Bar
         supportActionBar?.show()
@@ -62,8 +63,7 @@ class MainActivity : AppCompatActivity() {
         supportActionBar?.setCustomView(R.layout.custom_toolbar)
 
 
-        checker = Checker(applicationContext)
-        observeOnboard()
+
         networkCheck()
         setAdapter()
 
@@ -136,23 +136,6 @@ class MainActivity : AppCompatActivity() {
             .start()
     }
 
-
-    //Splash Stuff
-    private fun observeOnboard() {
-        checker.isDoneFlow.asLiveData().observe(this) {
-                passChecker ->
-            passChecker?.let {
-                when(passChecker) {
-                    PassChecker.UNDONE -> moveOnboarding()
-                }
-            }
-        }
-    }
-    private fun moveOnboarding() {
-        val intent = Intent(this, OnboardingActivity::class.java)
-        startActivity(intent)
-        finish()
-    }
 
     private fun moveToCategory() {
         val intent = Intent(this, CategoryActivity::class.java)
