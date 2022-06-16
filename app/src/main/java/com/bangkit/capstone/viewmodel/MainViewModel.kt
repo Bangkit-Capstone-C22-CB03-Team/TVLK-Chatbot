@@ -54,7 +54,7 @@ class MainViewModel(application: Application) : ViewModel() {
             override fun onFailure(call: Call<BotResponse>, t: Throwable) {
                 _isLoading.value = false
                 Log.d("error get bot response", t.message.toString())
-                insert(Message("Bot sedang error silahkan tunggu","bot",DateHelper.getCurrentDate(),0))
+                insert(Message("Bot sedang error silahkan ulangi lagi nanti","bot",DateHelper.getCurrentDate(),0))
             }
 
         }
