@@ -25,8 +25,8 @@
             android:layout_centerVertical="true"
             android:layout_marginStart="16dp"
             android:layout_toEndOf="@id/imgProfile"
-            android:textColor="@color/white"
             android:text="@string/bot_name"
+            android:textColor="@color/white"
             android:textSize="20sp" />
     </RelativeLayout>
 

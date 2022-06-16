@@ -1,22 +1,22 @@
 <resources>
-    <string name="app_name">Capstone</string>
+    <string name="app_name">Loka</string>
     <string name="edittext_hint">Ketikkan pesan</string>
-    <string name="btn_send_desc">Send message</string>
-    <string name="no_connection">No connection</string>
+    <string name="btn_send_desc">Kirim Pesan</string>
+    <string name="no_connection">Tidak ada koneksi</string>
 
-    <string name="description1">Our Bot chat are designed \nto answer your question about this service</string>
-    <string name="description2">No Need to wait for our customer service reply</string>
-    <string name="description3">What are You waiting for?</string>
-    <string name="title1">Need Help?</string>
-    <string name="title2">With Instant</string>
-    <string name="title3">Let\'s Start</string>
-    <string name="img_onboard1_desc">Onboarding Image One</string>
-    <string name="img_onboard2_desc">Onboarding Image Two</string>
-    <string name="img_onboard3_desc">Onboarding Image Three</string>
+    <string name="description1">Obrolan Bot kami dirancang \nuntuk menjawab pertanyaan Anda tentang layanan ini</string>
+    <string name="description2">Tidak Perlu menunggu balasan layanan pelanggan kami</string>
+    <string name="description3">Apa yang anda tunggu?</string>
+    <string name="title1">Butuh bantuan?</string>
+    <string name="title2">Dengan Instan</string>
+    <string name="title3">Ayo mulai</string>
+    <string name="img_onboard1_desc">Orientasi Gambar Pertama</string>
+    <string name="img_onboard2_desc">Orientasi Gambar Kedua</string>
+    <string name="img_onboard3_desc">Orientasi Gambar Ketiga</string>
     <string name="btn_onboard_next_desc">ke Selanjutnya</string>
     <string name="btn_onboard_prev_desc">Ke sebelumnya</string>
     <string name="btn_onboard_done_desc">selesai</string>
-    <string name="img_splashlogo">Splash Logo</string>
+    <string name="img_splashlogo">Logo Splash</string>
 
     <string name="connection_dialog_title">Koneksi terputus</string>
     <string name="connection_dialog_content">Perangkat Anda tidak terhubung ke internet. Pastikan untuk memeriksa koneksi internet Anda sebelum melanjutkan aplikasi</string>
