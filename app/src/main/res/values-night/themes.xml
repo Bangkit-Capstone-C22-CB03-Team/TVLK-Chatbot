@@ -11,7 +11,12 @@
         <!-- Text Color -->
         <item name="android:textColor">@color/white</item>
         <!-- Status bar color. -->
+        <item name="actionBarStyle">@style/myDarkTheme</item>
         <item name="android:statusBarColor" >@color/night_color_background</item>
         <item name="background">@color/night_color_background</item>
+    </style>
+    <!-- Dark Action Bar Theme. -->
+    <style name="myDarkTheme" parent="@style/Widget.MaterialComponents.ActionBar.Primary">
+        <item name="background">@color/white</item>
     </style>
 </resources>
