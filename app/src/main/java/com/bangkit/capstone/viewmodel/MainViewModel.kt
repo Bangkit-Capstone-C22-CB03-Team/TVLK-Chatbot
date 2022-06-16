@@ -74,9 +74,8 @@ class MainViewModel(application: Application) : ViewModel() {
 
 
     fun initialForSpeech(
-        textTOSpeechEngine: TextToSpeech, speechToTextLauncher: ActivityResultLauncher<Intent>
+        speechToTextLauncher: ActivityResultLauncher<Intent>
     ) = viewModelScope.launch {
-        textToSpeechEngine = textTOSpeechEngine
         startForResult = speechToTextLauncher
     }
 
@@ -91,10 +90,6 @@ class MainViewModel(application: Application) : ViewModel() {
             putExtra(RecognizerIntent.EXTRA_PROMPT, Locale("Bicara sekarang"))
             }
         )
-    }
-
-    fun speak(text: String) = viewModelScope.launch{
-        textToSpeechEngine.speak(text, TextToSpeech.QUEUE_FLUSH, null, "")
     }
 
 

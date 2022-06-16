@@ -13,9 +13,9 @@
     <string name="img_onboard1_desc">Onboarding Image One</string>
     <string name="img_onboard2_desc">Onboarding Image Two</string>
     <string name="img_onboard3_desc">Onboarding Image Three</string>
-    <string name="btn_onboard_next_desc">Next Button</string>
-    <string name="btn_onboard_prev_desc">Previous Button</string>
-    <string name="btn_onboard_done_desc">Done Onboard</string>
+    <string name="btn_onboard_next_desc">ke Selanjutnya</string>
+    <string name="btn_onboard_prev_desc">Ke sebelumnya</string>
+    <string name="btn_onboard_done_desc">selesai</string>
     <string name="img_splashlogo">Splash Logo</string>
 
     <string name="connection_dialog_title">Connection Lost</string>
@@ -33,4 +33,20 @@
     <string name="back_to_category">Back to category</string>
     <string name="contentdesc_button_ask">tanyakan sebuah pertanyaan tombol</string>
     <string name="bot_name">SLoka</string>
+    <string name="halo_pengguna">Halo Pengguna</string>
+    <string name="memilih_fitur">Ingin Menggunakan fitur apakah anda?</string>
+    <string name="voice_nassist">Voice \nAssist</string>
+    <string name="menggunakan_aksesbilitas">menggunakan aksesbilitas</string>
+    <string name="just_ntext">Just\nText</string>
+    <string name="tidak_menggunakan_aksesbilitas">tidak menggunakan aksesbilitas</string>
+    <string name="gambar_fitur_aksesbilitas">fitur aksesbilitas</string>
+    <string name="pilih_kategori_perihal_apa_yang_ingin_anda_tanyakan">pilih kategori perihal apa yang ingin anda tanyakan</string>
+    <string name="informasi_umum_tentang_pembayaran">informasi umum tentang pembayaran</string>
+    <string name="informasi_promo">informasi promo</string>
+    <string name="kupon_traveloka">kupon traveloka</string>
+    <string name="pembayaran_dengan_rupiah">pembayaran dengan rupiah</string>
+    <string name="traveloka_qr_scanner">traveloka QR SCanner</string>
+    <string name="sloka">Sloka</string>
+    <string name="kembali_ke_kategori">kembali ke kategori</string>
+    <string name="daftar_pesan">daftar pesan</string>
 </resources>

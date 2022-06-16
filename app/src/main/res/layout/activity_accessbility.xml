@@ -15,6 +15,7 @@
         android:paddingEnd="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        android:contentDescription=""
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
@@ -22,7 +23,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/nunitosans_bold"
-            android:text="Halo Pengguna"
+            android:text="@string/halo_pengguna"
             android:textSize="24sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -31,7 +32,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/nunitosans_semibold"
-            android:text="Ingin Menggunakan fitur apakah anda?"
+            android:text="@string/memilih_fitur"
             android:textSize="18sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -43,6 +44,7 @@
         android:layout_height="250dp"
         android:src="@drawable/accessbility"
         app:layout_constraintBottom_toTopOf="@id/guideline60"
+        android:contentDescription="@string/gambar_fitur_aksesbilitas"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -69,6 +71,7 @@
 
         <androidx.cardview.widget.CardView
             android:id="@+id/textBtn"
+            android:contentDescription="@string/tidak_menggunakan_aksesbilitas"
             android:layout_width="150dp"
             android:layout_height="150dp"
             app:cardCornerRadius="@dimen/rounded_radius"
@@ -83,7 +86,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Just\nText"
+                    android:text="@string/just_ntext"
                     android:textSize="28sp"
                     android:gravity="center"
                     android:textColor="@color/backgroundContext_color"
@@ -101,6 +104,7 @@
             android:layout_width="150dp"
             android:layout_height="150dp"
             app:cardCornerRadius="@dimen/rounded_radius"
+            android:contentDescription="@string/menggunakan_aksesbilitas"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toBottomOf="parent">
@@ -112,7 +116,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Voice \nAssist"
+                    android:text="@string/voice_nassist"
                     android:textSize="28sp"
                     android:fontFamily="@font/nunitosans_bold"
                     android:gravity="center"

@@ -3,7 +3,6 @@ import android.animation.ObjectAnimator
 import android.content.Intent
 import android.os.Bundle
 import android.speech.RecognizerIntent
-import android.speech.tts.TextToSpeech
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
@@ -21,7 +20,6 @@ import com.bangkit.capstone.helper.DateHelper
 import com.bangkit.capstone.viewmodel.CheckInternetAccess
 import com.bangkit.capstone.viewmodel.MainViewModel
 import com.bangkit.capstone.viewmodel.ViewModelFactory
-import java.util.*
 import kotlin.properties.Delegates
 
 class MainActivity : AppCompatActivity() {
@@ -90,12 +88,6 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-        if(isAccessbility){
-            mainViewModel.textMessage.observe(this){
-                speak(it)
-            }
-        }
-
         binding?.askButton?.setOnClickListener {
             mainViewModel.displaySpeechRecognizer()
         }
@@ -114,16 +106,18 @@ class MainActivity : AppCompatActivity() {
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         val inflater = menuInflater
         inflater.inflate(R.menu.menu_top_app_bar, menu)
-        return true
+
+        return !isAccessbility
+
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        when(item.itemId) {
+        return when(item.itemId) {
             R.id.clear -> {
                 mainViewModel.deleteAll()
-                return true
+                true
             }
-            else -> return true
+            else -> true
         }
     }
     private fun userChat(message: String){
@@ -144,7 +138,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun setViewModel(){
         mainViewModel = obtainViewModel(this)
-        mainViewModel.initialForSpeech(textToSpeechEngine,speechToText)
+        mainViewModel.initialForSpeech(speechToText)
     }
 
     private fun networkCheck(){
@@ -168,6 +162,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun moveToCategory() {
         val intent = Intent(this, CategoryActivity::class.java)
+        intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
         startActivity(intent)
         finish()
     }
@@ -188,17 +183,6 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private val textToSpeechEngine: TextToSpeech by lazy {
-        TextToSpeech(this) {
-            if (it == TextToSpeech.SUCCESS) {
-                textToSpeechEngine.language = Locale("in_ID")
-            }
-        }
-    }
-
-    private fun speak(msg: String){
-        mainViewModel.speak(msg)
-    }
 
 
     companion object {
@@ -206,14 +190,15 @@ class MainActivity : AppCompatActivity() {
         const val ACCESSBILITY = "ACCESSBILITY"
     }
 
-    override fun onPause() {
-        textToSpeechEngine.stop()
-        super.onPause()
-    }
 
     override fun onDestroy() {
-        textToSpeechEngine.shutdown()
+        mainViewModel.deleteAll()
         super.onDestroy()
+    }
+
+    override fun onBackPressed() {
+        moveToCategory()
+        super.onBackPressed()
     }
 
 

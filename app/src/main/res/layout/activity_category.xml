@@ -13,6 +13,7 @@
         android:layout_marginTop="48dp"
         android:paddingStart="16dp"
         android:paddingEnd="16dp"
+        android:contentDescription="@string/pilih_kategori_perihal_apa_yang_ingin_anda_tanyakan"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -22,7 +23,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/nunitosans_bold"
             android:text="@string/title_Category"
-            android:textSize="24sp"
+            android:textSize="34sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -120,6 +121,7 @@
         android:layout_margin="16dp"
         android:layout_marginTop="12dp"
         app:cardCornerRadius="8dp"
+        android:contentDescription="@string/informasi_promo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/cardView2">
@@ -160,6 +162,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
+        android:contentDescription="@string/kupon_traveloka"
         android:layout_marginTop="12dp"
         app:cardCornerRadius="8dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -203,6 +206,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
         android:layout_marginTop="12dp"
+        android:contentDescription="@string/pembayaran_dengan_rupiah"
         app:cardCornerRadius="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -247,6 +251,7 @@
         android:layout_marginTop="12dp"
         app:cardCornerRadius="8dp"
         app:layout_constraintEnd_toEndOf="parent"
+        android:contentDescription="@string/traveloka_qr_scanner"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/cardView5">
 
