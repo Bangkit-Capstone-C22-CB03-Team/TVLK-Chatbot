@@ -31,4 +31,6 @@
     <color name="content_color">#ffffffff</color>
     <color name="prop_color">#ffffffff</color>
     <color name="backgroundContext_color">#0096c8</color>
+    <color name="night_color_background">#37465A</color>
+    <color name="day_color_background">#F6FAFF</color>
 </resources>
