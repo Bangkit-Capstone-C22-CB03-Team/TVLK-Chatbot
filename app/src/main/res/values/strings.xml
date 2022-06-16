@@ -49,4 +49,6 @@
     <string name="sloka">Sloka</string>
     <string name="kembali_ke_kategori">kembali ke kategori</string>
     <string name="daftar_pesan">daftar pesan</string>
+
+    <string name="back_title">Kembali</string>
 </resources>
