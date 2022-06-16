@@ -11,7 +11,7 @@
         <!-- Text Color -->
         <item name="android:textColor">@color/white</item>
         <!-- Status bar color. -->
-        <item name="android:statusBarColor" >@color/cyan_800</item>
-
+        <item name="android:statusBarColor" >@color/night_color_background</item>
+        <item name="background">@color/night_color_background</item>
     </style>
 </resources>
