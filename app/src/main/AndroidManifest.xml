@@ -21,6 +21,7 @@
             android:name=".ui.AccessbilityActivity"
             android:exported="false" />
         <activity
+           android:launchMode="singleTask"
             android:name=".ui.CategoryActivity"
             android:exported="false" />
         <activity

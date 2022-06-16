@@ -13,6 +13,7 @@
         android:id="@+id/recyclerview_chat"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        tools:listitem="@layout/bot_message"
         android:contentDescription="@string/daftar_pesan"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintBottom_toTopOf="@+id/frame_layout"
@@ -54,6 +55,7 @@
         android:id="@+id/frame_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="?attr/colorPrimaryVariant"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
@@ -61,10 +63,10 @@
             android:id="@+id/blind_container"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#e4e4e4"
             android:orientation="vertical"
             android:paddingHorizontal="20dp"
             android:paddingVertical="10dp"
+            android:visibility="gone"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent">
 
@@ -72,22 +74,24 @@
                 android:id="@+id/ask_button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:contentDescription="@string/contentdesc_button_ask"
                 android:text="@string/ask_a_question"
-                android:contentDescription="@string/contentdesc_button_ask"/>
+                android:textColor="#FAFAFA" />
 
             <Button
                 android:id="@+id/back_button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:contentDescription="@string/kembali_ke_kategori"
                 android:text="@string/back_to_category"
-                android:contentDescription="@string/kembali_ke_kategori"/>
+                android:textColor="#FAFAFA" />
         </LinearLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/buttons_container"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:visibility="gone"
+            android:visibility="visible"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent">
 
@@ -95,6 +99,7 @@
                 android:id="@+id/edittext_chat_log"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_margin="8dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginBottom="8dp"
@@ -107,7 +112,6 @@
                 android:minHeight="48dp"
                 android:paddingVertical="10dp"
                 android:paddingLeft="16dp"
-                android:layout_margin="8dp"
                 android:paddingRight="16dp"
                 android:singleLine="false"
                 android:textColor="@color/black"
@@ -121,16 +125,16 @@
                 android:id="@+id/send_button_chat_log"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:layout_marginEnd="8dp"
                 android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="8dp"
+                android:backgroundTint="@color/cyan_400"
+                android:contentDescription="@string/btn_send_desc"
                 android:src="@drawable/ic_send"
                 app:fabCustomSize="45dp"
-                android:backgroundTint="@color/cyan_400"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                android:contentDescription="@string/btn_send_desc" />
+                app:layout_constraintTop_toTopOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
 

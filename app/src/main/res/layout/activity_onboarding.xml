@@ -267,7 +267,8 @@
         android:contentDescription="@string/btn_onboard_prev_desc"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/contentMid1" />
+        app:layout_constraintTop_toBottomOf="@id/contentMid1"
+        tools:ignore="TouchTargetSizeCheck" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/finishBtn"
